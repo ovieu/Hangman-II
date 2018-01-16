@@ -25,5 +25,6 @@ public class Hangman extends ConsoleProgram {
 
 	/** private instance variables  */
 	private HangmanLexicon hangmanLexicon;
+	private int guessCount = 10;    //  the amount of guess the user has per game
 
 }
