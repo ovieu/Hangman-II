@@ -29,7 +29,32 @@ public class Hangman extends ConsoleProgram {
             //  get secret word from lexicon
             String secretWord = hangmanLexicon.getWord(rgen.nextInt(0,9));
 
+            //  create guessWord
+            String guessWord = createGuessWord(secretWord);
 
+            //  display secretWord
+            println(guessWord);
+
+            //  get charGuess from user
+            String guessChar = getCharGuess();
+
+            if (secretWord.contains(guessChar)) {
+                updateSecretWord();
+                displayGuessMsg();
+            } else {
+                decrementGuessCount();
+                displayGuessMsg();
+            }
+
+            if (guessWord.equals(secretWord)) {
+                displayWinMsg();
+                break;
+            }
+
+            if (guessCount < 1) {
+                displayLoseMsg();
+                break;
+            }
         }
 	}
 
