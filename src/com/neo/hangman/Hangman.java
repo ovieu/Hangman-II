@@ -8,6 +8,7 @@
 package com.neo.hangman;
 
 import acm.program.ConsoleProgram;
+import acm.util.RandomGenerator;
 
 public class Hangman extends ConsoleProgram {
 
@@ -25,6 +26,10 @@ public class Hangman extends ConsoleProgram {
         //  the game loop
         while (!gameOver()) {
 
+            //  get secret word from lexicon
+            String secretWord = hangmanLexicon.getWord(rgen.nextInt(0,9));
+
+
         }
 	}
 
@@ -36,5 +41,6 @@ public class Hangman extends ConsoleProgram {
     /** private instance variables  */
 	private HangmanLexicon hangmanLexicon;
 	private int guessCount = 10;    //  the amount of guess the user has per game
+    private static RandomGenerator rgen = RandomGenerator.getInstance();
 
 }
