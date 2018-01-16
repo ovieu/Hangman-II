@@ -21,9 +21,19 @@ public class Hangman extends ConsoleProgram {
 
 		//  create lexicon object
         hangmanLexicon = new HangmanLexicon();
+
+        //  the game loop
+        while (!gameOver()) {
+
+        }
 	}
 
-	/** private instance variables  */
+	/** game is over if guess count is zero */
+    private boolean gameOver() {
+        return (guessCount < 1);
+    }
+
+    /** private instance variables  */
 	private HangmanLexicon hangmanLexicon;
 	private int guessCount = 10;    //  the amount of guess the user has per game
 
