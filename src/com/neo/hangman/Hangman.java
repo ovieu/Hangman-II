@@ -35,30 +35,44 @@ public class Hangman extends ConsoleProgram {
             //  display secretWord
             println(guessWord);
 
-            //  get charGuess from user
-            String guessChar = getCharGuess();
-
-            if (secretWord.contains(guessChar)) {
-                updateSecretWord();
-                displayGuessMsg();
-            } else {
-                decrementGuessCount();
-                displayGuessMsg();
-            }
-
-            if (guessWord.equals(secretWord)) {
-                displayWinMsg();
-                break;
-            }
-
-            if (guessCount < 1) {
-                displayLoseMsg();
-                break;
-            }
+//            //  get charGuess from user
+//            String guessChar = getCharGuess();
+//
+//            if (secretWord.contains(guessChar)) {
+//                updateSecretWord();
+//                displayGuessMsg();
+//            } else {
+//                decrementGuessCount();
+//                displayGuessMsg();
+//            }
+//
+//            if (guessWord.equals(secretWord)) {
+//                displayWinMsg();
+//                break;
+//            }
+//
+//            if (guessCount < 1) {
+//                displayLoseMsg();
+//                break;
+//            }
         }
 	}
 
-	/** game is over if guess count is zero */
+    /** creates a guessword made up of dashes
+     *  input ---> "name"
+     *  oupup ---> "----"
+     * @param secretWord
+     * @return --------
+     */
+    private String createGuessWord(String secretWord) {
+        String result = "";
+        for (int i = 0; i < secretWord.length(); i++) {
+            result += "-";
+        }
+        return result;
+    }
+
+    /** game is over if guess count is zero */
     private boolean gameOver() {
         return (guessCount < 1);
     }
