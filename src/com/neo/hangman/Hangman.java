@@ -18,6 +18,12 @@ public class Hangman extends ConsoleProgram {
     public void run() {
 		/* You fill this in */
 		println("Welcome To Hangman!");
+
+		//  create lexicon object
+        hangmanLexicon = new HangmanLexicon();
 	}
+
+	/** private instance variables  */
+	private HangmanLexicon hangmanLexicon;
 
 }
