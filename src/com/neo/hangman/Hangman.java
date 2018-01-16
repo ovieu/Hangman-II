@@ -35,34 +35,67 @@ public class Hangman extends ConsoleProgram {
             //  display secretWord
             println(guessWord);
 
-//            //  get charGuess from user
-//            String guessChar = getCharGuess();
-//
-//            if (secretWord.contains(guessChar)) {
-//                updateSecretWord();
-//                displayGuessMsg();
-//            } else {
-//                decrementGuessCount();
-//                displayGuessMsg();
-//            }
-//
-//            if (guessWord.equals(secretWord)) {
-//                displayWinMsg();
-//                break;
-//            }
-//
-//            if (guessCount < 1) {
-//                displayLoseMsg();
-//                break;
-//            }
+            /** start stub  **/
+            println(secretWord);
+            println();
+            /** end stub **/
+
+            //  get single string from user
+            String singleStringGuess = getSingleStringGuess();
+
+            /** start  stub for single string **/
+            println("the entered string is: " + singleStringGuess);
+            /** end stub for single string  **/
+
+            /*
+            if (secretWord.contains(singleStringGuess)) {
+                updateSecretWord();
+                displayGuessMsg();
+            } else {
+                decrementGuessCount();
+                displayGuessMsg();
+            }
+
+            if (guessWord.equals(secretWord)) {
+                displayWinMsg();
+                break;
+            }
+
+            if (guessCount < 1) {
+                displayLoseMsg();
+                break;
+            }*/
         }
 	}
 
+    /** gets the users guess. returns a String with one char (uppercase)
+     * @return a single character string in uppercase
+     */
+    private String getSingleStringGuess() {
+        String input = "";
+        while (true) {
+            input = readLine("Enter a guess: ");
+            if (isValidSingleString(input)) break;
+        }
+        return input.toUpperCase();
+    }
+
+    /** the character is valid if it is an alphabet and length == 1 */
+    private boolean isValidSingleString(String input) {
+        if (input.length() == 1) {
+            if (!Character.isLetter(input.charAt(0))) {
+                println("Not a valid alphabet, try again. ");
+            } else {
+                return Character.isLetter(input.charAt(0));
+            }
+        }
+        println("Not a valid alphabet, try again. ");
+        return false;
+    }
+
     /** creates a guessword made up of dashes
-     *  input ---> "name"
-     *  oupup ---> "----"
-     * @param secretWord
-     * @return --------
+     * @param secretWord the input from the user
+     * @return result the same word but represented by dashes "----"
      */
     private String createGuessWord(String secretWord) {
         String result = "";
