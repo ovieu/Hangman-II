@@ -166,7 +166,7 @@ public class Hangman extends ConsoleProgram {
 
     /** private instance variables  */
 	private HangmanLexicon hangmanLexicon;
-	private int guessCount = 10;    //  the amount of guess the user has per game
+	private int guessCount = 8;    //  the amount of guess the user has per game
     private static RandomGenerator rgen = RandomGenerator.getInstance();
     private HangmanCanvas canvas;
     private String incorrectGuess = ""; //  keeps track of all the incorrect guesses
