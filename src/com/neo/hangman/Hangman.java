@@ -22,6 +22,7 @@ public class Hangman extends ConsoleProgram {
         add(canvas);
     }
 
+
     public void run() {
 		/* You fill this in */
 		println("Welcome To Hangman!");
