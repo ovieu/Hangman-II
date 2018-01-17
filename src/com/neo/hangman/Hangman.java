@@ -32,33 +32,16 @@ public class Hangman extends ConsoleProgram {
             //  create guessWord
             String guessWord = createGuessWord(secretWord);
 
-            //  diplay hint of new word
-            println("The word now looks like this: " + guessWord);
-
             while (true) {
-                //  display secretWord
-                println(guessWord);
-
-                /** start stub  **/
-                println(secretWord);
-                println();
-                /** end stub **/
+                //  diplay hint of new word
+                println("The word now looks like this: " + guessWord);
 
                 //  get single string from user
                 String singleStringGuess = getSingleStringGuess();
 
-                /** start  stub for single string **/
-                println("the entered string is: " + singleStringGuess);
-                /** end stub for single string  **/
-
                 /*  check if secret word contains letter */
                 if (secretWord.contains(singleStringGuess)) {
                     guessWord = updateGuessWord(secretWord, guessWord, singleStringGuess);
-
-                    /** start stub */
-                    println("The new guessword to display is: " + guessWord);
-                    /** end stub */
-
                     displayGuessMsg(guessWord, guessCount);
                     println();
                 } else {
@@ -67,7 +50,6 @@ public class Hangman extends ConsoleProgram {
                     displayGuessMsg(guessWord, guessCount);
                     println();
                 }
-
 
                 if (guessWord.equals(secretWord)) {
                     displayWinMsg(guessWord);
@@ -97,7 +79,6 @@ public class Hangman extends ConsoleProgram {
 
     /** displays the result of the guess    */
     private void displayGuessMsg(String guessWord, int guessCount) {
-        println("The Word now looks like this: " + guessWord);
         println("You have " + guessCount + " guesses left");
     }
 
