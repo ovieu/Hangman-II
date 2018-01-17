@@ -48,6 +48,9 @@ public class Hangman extends ConsoleProgram {
                 //  diplay hint of new word
                 println("The word now looks like this: " + guessWord);
 
+                //  display the guess word on the canvas
+                canvas.displayWord(guessWord);
+
                 //  get single string from user
                 String singleStringGuess = getSingleStringGuess();
 
