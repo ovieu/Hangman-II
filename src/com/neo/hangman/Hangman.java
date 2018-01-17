@@ -32,6 +32,9 @@ public class Hangman extends ConsoleProgram {
             //  create guessWord
             String guessWord = createGuessWord(secretWord);
 
+            //  diplay hint of new word
+            println("The word now looks like this: " + guessWord);
+
             while (true) {
                 //  display secretWord
                 println(guessWord);
@@ -57,9 +60,12 @@ public class Hangman extends ConsoleProgram {
                     /** end stub */
 
                     displayGuessMsg(guessWord, guessCount);
+                    println();
                 } else {
                     guessCount--;
+                    println("There are no " + singleStringGuess + "'s in the word");
                     displayGuessMsg(guessWord, guessCount);
+                    println();
                 }
 
 
