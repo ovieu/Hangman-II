@@ -74,7 +74,13 @@ public class Hangman extends ConsoleProgram {
         }
 	}
 
-	/** display the win message */
+	/** display lose message */
+    private void displayLoseMsg(String secretWord) {
+        println("The word was: " + secretWord);
+        println("You Lose.");
+    }
+
+    /** display the win message */
     private void displayWinMsg(String guessWord) {
         println("You guessed the word: " + guessWord);
         println("You Win");
