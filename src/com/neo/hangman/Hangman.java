@@ -105,6 +105,8 @@ public class Hangman extends ConsoleProgram {
                } else {
                    result += guessWord.charAt(i);
                }
+           } else {
+               result += guessWord.charAt(i);
            }
         } return result;
     }
