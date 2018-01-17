@@ -61,18 +61,24 @@ public class Hangman extends ConsoleProgram {
                 displayGuessMsg(guessWord, guessCount);
             }
 
-            /*
+
             if (guessWord.equals(secretWord)) {
-                displayWinMsg();
+                displayWinMsg(guessWord);
                 break;
             }
 
             if (guessCount < 1) {
-                displayLoseMsg();
+                displayLoseMsg(secretWord);
                 break;
-            }*/
+            }
         }
 	}
+
+	/** display the win message */
+    private void displayWinMsg(String guessWord) {
+        println("You guessed the word: " + guessWord);
+        println("You Win");
+    }
 
     /** displays the result of the guess    */
     private void displayGuessMsg(String guessWord, int guessCount) {
