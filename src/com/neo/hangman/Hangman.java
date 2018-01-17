@@ -16,6 +16,12 @@ public class Hangman extends ConsoleProgram {
         new Hangman().start(args);
     }
 
+    /** setup the graphics for the hangman */
+    public void init() {
+        canvas = new HangmanCanvas();
+        add(canvas);
+    }
+
     public void run() {
 		/* You fill this in */
 		println("Welcome To Hangman!");
@@ -25,6 +31,8 @@ public class Hangman extends ConsoleProgram {
 
         //  the game loop
         while (!gameOver()) {
+            //  insert new line
+            println();
 
             //  get secret word from lexicon
             String secretWord = hangmanLexicon.getWord(rgen.nextInt(0,9));
@@ -144,4 +152,5 @@ public class Hangman extends ConsoleProgram {
 	private HangmanLexicon hangmanLexicon;
 	private int guessCount = 10;    //  the amount of guess the user has per game
     private static RandomGenerator rgen = RandomGenerator.getInstance();
+    private HangmanCanvas canvas;
 }
