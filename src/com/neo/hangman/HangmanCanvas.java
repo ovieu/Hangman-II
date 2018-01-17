@@ -5,7 +5,7 @@
  */
 package com.neo.hangman;
 
-import acm.graphics.GCanvas;
+import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
 
@@ -45,5 +45,13 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
+
+	/** the body parts of the hangman   */
+	private GOval head;
+	private GLine body;
+	private GCompound leftArm, rightArm;
+	private GCompound leftLeg, rightLeg;
+	private GLine leftFoot, rightFoot;
+	private GCompound scaffold;
 
 }
