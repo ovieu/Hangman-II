@@ -55,10 +55,10 @@ public class Hangman extends ConsoleProgram {
                 println("The new guessword to display is: " + guessWord);
                 /** end stub */
 
-                //displayGuessMsg(guessWord, guessCount);
+                displayGuessMsg(guessWord, guessCount);
             } else {
-                //decrementGuessCount();
-                //displayGuessMsg();
+                guessCount--;
+                displayGuessMsg(guessWord, guessCount);
             }
 
             /*
@@ -74,11 +74,11 @@ public class Hangman extends ConsoleProgram {
         }
 	}
 
-
-//    private void displayGuessMsg(String guessWord, int guessCount) {
-//
-//
-//    }
+    /** displays the result of the guess    */
+    private void displayGuessMsg(String guessWord, int guessCount) {
+        println("The Word now looks like this: " + guessWord);
+        println("You have " + guessCount + " guesses left");
+    }
 
     /** update the guess word to reflect the guessed character  */
     private String updateGuessWord(String secretWord, String guessWord, String sStrGuess) {
