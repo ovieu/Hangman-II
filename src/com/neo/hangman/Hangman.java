@@ -47,15 +47,21 @@ public class Hangman extends ConsoleProgram {
             println("the entered string is: " + singleStringGuess);
             /** end stub for single string  **/
 
-            /*
+            /*  check if secret word contains letter */
             if (secretWord.contains(singleStringGuess)) {
-                updateSecretWord();
-                displayGuessMsg();
+                guessWord = updateGuessWord(secretWord, guessWord, singleStringGuess);
+
+                /** start stub */
+                println("The new guessword to display is: " + guessWord);
+                /** end stub */
+
+                //displayGuessMsg(guessWord, guessCount);
             } else {
-                decrementGuessCount();
-                displayGuessMsg();
+                //decrementGuessCount();
+                //displayGuessMsg();
             }
 
+            /*
             if (guessWord.equals(secretWord)) {
                 displayWinMsg();
                 break;
@@ -67,6 +73,26 @@ public class Hangman extends ConsoleProgram {
             }*/
         }
 	}
+
+
+//    private void displayGuessMsg(String guessWord, int guessCount) {
+//
+//
+//    }
+
+    /** update the guess word to reflect the guessed character  */
+    private String updateGuessWord(String secretWord, String guessWord, String sStrGuess) {
+        String result = "";
+        for (int i = 0; i < secretWord.length(); i++ ) {
+           if (guessWord.charAt(i) == '-') {
+               if (secretWord.charAt(i) == sStrGuess.charAt(0)) {
+                   result += sStrGuess.charAt(0);
+               } else {
+                   result += guessWord.charAt(i);
+               }
+           }
+        } return result;
+    }
 
     /** gets the users guess. returns a String with one char (uppercase)
      * @return a single character string in uppercase
@@ -114,5 +140,4 @@ public class Hangman extends ConsoleProgram {
 	private HangmanLexicon hangmanLexicon;
 	private int guessCount = 10;    //  the amount of guess the user has per game
     private static RandomGenerator rgen = RandomGenerator.getInstance();
-
 }
