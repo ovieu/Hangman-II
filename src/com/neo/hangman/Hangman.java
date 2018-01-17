@@ -32,45 +32,48 @@ public class Hangman extends ConsoleProgram {
             //  create guessWord
             String guessWord = createGuessWord(secretWord);
 
-            //  display secretWord
-            println(guessWord);
+            while (true) {
+                //  display secretWord
+                println(guessWord);
 
-            /** start stub  **/
-            println(secretWord);
-            println();
-            /** end stub **/
+                /** start stub  **/
+                println(secretWord);
+                println();
+                /** end stub **/
 
-            //  get single string from user
-            String singleStringGuess = getSingleStringGuess();
+                //  get single string from user
+                String singleStringGuess = getSingleStringGuess();
 
-            /** start  stub for single string **/
-            println("the entered string is: " + singleStringGuess);
-            /** end stub for single string  **/
+                /** start  stub for single string **/
+                println("the entered string is: " + singleStringGuess);
+                /** end stub for single string  **/
 
-            /*  check if secret word contains letter */
-            if (secretWord.contains(singleStringGuess)) {
-                guessWord = updateGuessWord(secretWord, guessWord, singleStringGuess);
+                /*  check if secret word contains letter */
+                if (secretWord.contains(singleStringGuess)) {
+                    guessWord = updateGuessWord(secretWord, guessWord, singleStringGuess);
 
-                /** start stub */
-                println("The new guessword to display is: " + guessWord);
-                /** end stub */
+                    /** start stub */
+                    println("The new guessword to display is: " + guessWord);
+                    /** end stub */
 
-                displayGuessMsg(guessWord, guessCount);
-            } else {
-                guessCount--;
-                displayGuessMsg(guessWord, guessCount);
+                    displayGuessMsg(guessWord, guessCount);
+                } else {
+                    guessCount--;
+                    displayGuessMsg(guessWord, guessCount);
+                }
+
+
+                if (guessWord.equals(secretWord)) {
+                    displayWinMsg(guessWord);
+                    break;
+                }
+
+                if (guessCount < 1) {
+                    displayLoseMsg(secretWord);
+                    break;
+                }
             }
 
-
-            if (guessWord.equals(secretWord)) {
-                displayWinMsg(guessWord);
-                break;
-            }
-
-            if (guessCount < 1) {
-                displayLoseMsg(secretWord);
-                break;
-            }
         }
 	}
 
