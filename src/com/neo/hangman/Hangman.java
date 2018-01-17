@@ -35,6 +35,9 @@ public class Hangman extends ConsoleProgram {
             //  insert new line
             println();
 
+            //  reset the canvas
+            canvas.reset();
+
             //  get secret word from lexicon
             String secretWord = hangmanLexicon.getWord(rgen.nextInt(0,9));
 
