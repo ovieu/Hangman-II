@@ -44,6 +44,9 @@ public class Hangman extends ConsoleProgram {
             //  create guessWord
             String guessWord = createGuessWord(secretWord);
 
+            //  reset incorrect guess
+            incorrectGuess = "";
+
             while (true) {
                 //  diplay hint of new word
                 println("The word now looks like this: " + guessWord);
@@ -64,6 +67,12 @@ public class Hangman extends ConsoleProgram {
                     println("There are no " + singleStringGuess + "'s in the word");
                     displayGuessMsg(guessWord, guessCount);
                     println();
+
+                    //  convert incorrect guess to char n pass to noteIncorrect
+                    char incorrectGuess = singleStringGuess.charAt(0);
+
+                    //  display incorrect guesswords in the canvas
+                    canvas.noteIncorrectGuess(incorrectGuess);
                 }
 
                 if (guessWord.equals(secretWord)) {
@@ -160,4 +169,5 @@ public class Hangman extends ConsoleProgram {
 	private int guessCount = 10;    //  the amount of guess the user has per game
     private static RandomGenerator rgen = RandomGenerator.getInstance();
     private HangmanCanvas canvas;
+    private String incorrectGuess = ""; //  keeps track of all the incorrect guesses
 }
