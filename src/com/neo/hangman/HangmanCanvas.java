@@ -20,7 +20,17 @@ public class HangmanCanvas extends GCanvas {
 	}
 
     private void displayScaffold() {
+        scaffoldPole = new GLine(0.2 * getWidth(), 0.2 * getHeight(),
+                                    0.2 * getWidth(), 0.5 * getHeight());
+        add(scaffoldPole);
 
+        scaffoldLedge = new GLine(0.2 * getWidth(), 0.2 * getHeight(),
+                0.4 * getWidth(), 0.2 * getHeight());
+        add(scaffoldLedge);
+
+        scaffoldRope = new GLine(0.4 * getWidth(), 0.2 * getHeight(),
+                0.4 * getWidth(), 0.3 * getHeight());
+        add(scaffoldRope);
     }
 
     /**
@@ -58,7 +68,7 @@ public class HangmanCanvas extends GCanvas {
     private void displayHangmanBody(String incorrectGuessStr) {
         int incorrectGuessLen = incorrectGuessStr.length();
         switch (incorrectGuessLen) {
-            case 1: displayHead();
+            /*case 1: displayHead();
                 break;
             case 2: displayBody();
                 break;
@@ -73,7 +83,7 @@ public class HangmanCanvas extends GCanvas {
             case 7: displayRightLeg();
                 break;
             case 8: diplayLeftLeg();
-                break;
+                break;*/
             default: break;
         }
     }
