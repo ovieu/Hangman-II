@@ -66,13 +66,12 @@ public class Hangman extends ConsoleProgram {
                     guessCount--;
                     println("There are no " + singleStringGuess + "'s in the word");
                     displayGuessMsg(guessWord, guessCount);
+
+                    //  update the incorrect string character
+                    incorectCharacters += singleStringGuess;
+                    //  display the incorrect string character in the canvas
+                    canvas.noteIncorrectGuess(incorectCharacters);
                     println();
-
-                    //  convert incorrect guess to char n pass to noteIncorrect
-                    char incorrectGuess = singleStringGuess.charAt(0);
-
-                    //  display incorrect guesswords in the canvas
-                    canvas.noteIncorrectGuess(incorrectGuess);
                 }
 
                 if (guessWord.equals(secretWord)) {
@@ -173,4 +172,5 @@ public class Hangman extends ConsoleProgram {
     private HangmanCanvas canvas;
     private String incorrectGuess = ""; //  keeps track of all the incorrect guesses
     private int DELAY = 1000;
+    private String incorectCharacters = "";
 }

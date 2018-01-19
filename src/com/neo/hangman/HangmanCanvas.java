@@ -22,9 +22,9 @@ public class HangmanCanvas extends GCanvas {
  */
 	public void displayWord(String word) {
 		/* You fill this in */
-        guessWord.setFont("Courier-24");
-        guessWord.setLabel(word);
-		add(guessWord, 0.4 * getWidth(), 0.7 * getHeight());
+        guessWordLabel.setFont("Courier-24");
+        guessWordLabel.setLabel(word);
+		add(guessWordLabel, 0.4 * getWidth(), 0.7 * getHeight());
 	}
 
 /**
@@ -33,8 +33,11 @@ public class HangmanCanvas extends GCanvas {
  * on the scaffold and adds the letter to the list of incorrect
  * guesses that appears at the bottom of the window.
  */
-	public void noteIncorrectGuess(String letter) {
+	public void noteIncorrectGuess(String incorrectGuessStr) {
 		/* You fill this in */
+        wrongWordLabel.setFont("Courier-24");
+        wrongWordLabel.setLabel(incorrectGuessStr);
+        add(wrongWordLabel, 0.4 * getWidth(), 0.75 * getHeight());
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
@@ -51,6 +54,7 @@ public class HangmanCanvas extends GCanvas {
 	private static final int FOOT_LENGTH = 28;
 
 	/** private instance variables representing items on screen */
-	private GLabel guessWord = new GLabel("");
+	private GLabel guessWordLabel = new GLabel("");
+	private GLabel wrongWordLabel = new GLabel("");
 
 }
