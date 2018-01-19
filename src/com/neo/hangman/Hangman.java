@@ -77,6 +77,8 @@ public class Hangman extends ConsoleProgram {
 
                 if (guessWord.equals(secretWord)) {
                     displayWinMsg(guessWord);
+                    canvas.displayWord(guessWord);
+                    pause(DELAY);
                     break;
                 }
 
@@ -170,4 +172,5 @@ public class Hangman extends ConsoleProgram {
     private static RandomGenerator rgen = RandomGenerator.getInstance();
     private HangmanCanvas canvas;
     private String incorrectGuess = ""; //  keeps track of all the incorrect guesses
+    private int DELAY = 1000;
 }

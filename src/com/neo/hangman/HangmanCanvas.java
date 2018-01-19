@@ -6,6 +6,7 @@
 package com.neo.hangman;
 
 import acm.graphics.GCanvas;
+import acm.graphics.GLabel;
 
 public class HangmanCanvas extends GCanvas {
 
@@ -21,6 +22,9 @@ public class HangmanCanvas extends GCanvas {
  */
 	public void displayWord(String word) {
 		/* You fill this in */
+        guessWord.setFont("Courier-24");
+        guessWord.setLabel(word);
+		add(guessWord, 0.4 * getWidth(), 0.7 * getHeight());
 	}
 
 /**
@@ -45,5 +49,8 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
+
+	/** private instance variables representing items on screen */
+	private GLabel guessWord = new GLabel("");
 
 }
