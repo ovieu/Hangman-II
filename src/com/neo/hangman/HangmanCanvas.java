@@ -19,7 +19,11 @@ public class HangmanCanvas extends GCanvas {
 		displayScaffold();
 	}
 
-/**
+    private void displayScaffold() {
+
+    }
+
+    /**
  * Updates the word on the screen to correspond to the current
  * state of the game.  The argument string shows what letters have
  * been guessed so far; unguessed letters are indicated by hyphens.
@@ -92,6 +96,7 @@ public class HangmanCanvas extends GCanvas {
 	private GLabel wrongWordLabel = new GLabel("");
 	private GOval head;
 	private GLine body, shoulder, rightArm, leftArm, hips, rightLeg, leftLeg;
+	private GLine scaffoldPole, scaffoldLedge, scaffoldRope;
 
 
 }
