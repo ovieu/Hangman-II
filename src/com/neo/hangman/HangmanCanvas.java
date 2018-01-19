@@ -38,9 +38,39 @@ public class HangmanCanvas extends GCanvas {
         wrongWordLabel.setFont("Courier-24");
         wrongWordLabel.setLabel(incorrectGuessStr);
         add(wrongWordLabel, 0.4 * getWidth(), 0.75 * getHeight());
+
+        //  display body parts
+        displayHangmanBody(incorrectGuessStr);
 	}
 
-/* Constants for the simple version of the picture (in pixels) */
+    /** displays the body of the hangman depending on the
+     *  number of incorect guesses"
+     * @param incorrectGuessStr the incorrect guesses by the player
+     */
+    private void displayHangmanBody(String incorrectGuessStr) {
+        int incorrectGuessLen = incorrectGuessStr.length();
+        switch (incorrectGuessLen) {
+            case 1: displayHead();
+                break;
+            case 2: displayBody();
+                break;
+            case 3: displayShoulder();
+                break;
+            case 4: displayRightArm();
+                break;
+            case 5: diplayLeftArm();
+                break;
+            case 6: displayHips();
+                break;
+            case 7: displayRightLeg();
+                break;
+            case 8: diplayLeftLeg();
+                break;
+            default: break;
+        }
+    }
+
+    /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
 	private static final int BEAM_LENGTH = 144;
 	private static final int ROPE_LENGTH = 18;
