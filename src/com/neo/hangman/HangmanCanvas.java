@@ -7,6 +7,8 @@ package com.neo.hangman;
 
 import acm.graphics.GCanvas;
 import acm.graphics.GLabel;
+import acm.graphics.GLine;
+import acm.graphics.GOval;
 
 public class HangmanCanvas extends GCanvas {
 
@@ -86,5 +88,8 @@ public class HangmanCanvas extends GCanvas {
 	/** private instance variables representing items on screen */
 	private GLabel guessWordLabel = new GLabel("");
 	private GLabel wrongWordLabel = new GLabel("");
+	private GOval head;
+	private GLine body, shoulder, rightArm, leftArm, hips, rightLeg, leftLeg;
+
 
 }
